@@ -9,6 +9,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 //2021/06/29
+//2021/06/29
 
 @Entity
 @Table(name="bubord")
