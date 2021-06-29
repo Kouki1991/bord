@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+		<h1>みんなの掲示板</h1>
+	</div>
+	<div>
+		<form method="post" action="/bord/Registration">
+			投稿者：<input type="text" name ="name"><br/>
+			メール：<input type="text" name="mail"><br />
+			　件名：<input type="text" name ="title"><br/>
+			　内容：<input type="text" name ="contents"><br/>
+			<input type="submit" value="送信">
+		</form><br/>
+		*********************************************<br/>
+	</div>
+	<div>
+		<div th:each="bord: ${bords}">
+			投稿者：<span th:text="${bord.name}"></span><br/>
+			　件名：<span th:text="${bord.title}"></span><br/>
+			メール：<span th:text="${bord.mail}"></span><br/>
+			投稿日：<span th:text="${bord.writedate}"></span><br/>
+			　内容：<span th:text="${bord.contents}"></span><br/>
+			*********************************************<br/>
+		</div>
+	</div>
+</body>
+</html>
